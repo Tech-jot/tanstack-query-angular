@@ -1,21 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QueryClient, QueryClientProvider } from '@tanstack/angular-query';
-
-const queryClient = new QueryClient();
+import { DemoComponent } from './demo/demo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+    DemoComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, // Include HttpClientModule here
-    QueryClientProvider.provide(queryClient)
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

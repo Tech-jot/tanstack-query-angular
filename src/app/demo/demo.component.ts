@@ -7,8 +7,8 @@ import { injectQuery } from '@tanstack/angular-query-experimental'
   templateUrl: './demo.component.html',
 })
 export class DemoComponent implements OnInit {
-  info = injectQuery(() => ({ queryKey: ['todos'], queryFn: fetchTodoList }))
-  
+  // info = injectQuery(() => ({ queryKey: ['todos'], queryFn: fetchTodoList }))
+
   todo: any;
 
   constructor(private apiService: ApiService) {}
@@ -17,7 +17,7 @@ export class DemoComponent implements OnInit {
     const observer = {
       next: (data: any[]) => {
         this.todo = data;
-        console.log('data', this.todo);
+        // console.log('data', this.todo);
       },
       error: (error: any) => console.error('There was an error!', error),
       // complete: () => console.log('API call completed'),
